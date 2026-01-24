@@ -1,11 +1,22 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { FileText, ExternalLink, AlertCircle } from 'lucide-react';
+import { FileText, ExternalLink, AlertCircle, Star } from 'lucide-react';
 
 const PYQDirectory: React.FC = () => {
   const { examId } = useParams<{ examId: string }>();
 
   const pyqData: Record<string, any> = {
+    'aiims-norcet': {
+      title: 'AIIMS NORCET PREVIOUS YEAR PAPERS',
+      description: 'Authentic memory-based and official previous year question papers for AIIMS Nursing Officer Recruitment Common Eligibility Test (NORCET).',
+      papers: [
+        { year: '2024', shift: 'NORCET 7 PRELIMS (SEP)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/aXOX5oZXPZb' },
+        { year: '2023', shift: 'NORCET 4 (JUNE)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/weaumiphIZb' },
+        { year: '2022', shift: 'NORCET 3 (SHIFT 1)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/f2X7pvwHMZb' },
+        { year: '2022', shift: 'NORCET 3 (SHIFT 2)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/K7VH496yQZb' },
+        { year: 'MIXED', shift: '20 NOV (SHIFT 2)', type: 'PREVIOUS YEAR', link: 'https://links.nprep.in/xkOMXfpAhZb' },
+      ]
+    },
     'rrb-staff-nurse': {
       title: 'RRB STAFF NURSE PREVIOUS YEAR PAPERS',
       description: 'Collection of Railway Recruitment Board Staff Nurse exam papers from previous recruitment cycles.',
@@ -87,7 +98,7 @@ const PYQDirectory: React.FC = () => {
 
   const currentExam = pyqData[examId || ''] || pyqData['default'];
 
-  // List of keys to display in the main directory
+  // List of keys to display in the main directory (excluding NORCET which is highlighted separately)
   const availableExams = [
     'rrb-staff-nurse',
     'esic-staff-nurse',
@@ -103,6 +114,32 @@ const PYQDirectory: React.FC = () => {
     return (
       <div className="py-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-6 uppercase">ALL NURSING EXAM PYQS</h1>
+        
+        {/* Highlighted NORCET Section */}
+        <div className="mb-10 transform hover:scale-[1.01] transition-transform duration-200">
+          <Link to="/pyq/aiims-norcet" className="block">
+            <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-sm shadow-lg p-8 text-white relative overflow-hidden group">
+              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                <FileText size={120} />
+              </div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-2 mb-2">
+                  <Star className="fill-yellow-300 text-yellow-300 h-5 w-5" />
+                  <span className="text-sm font-bold tracking-wider uppercase text-yellow-100">Most Popular</span>
+                </div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase tracking-tight">AIIMS NORCET PYQ</h2>
+                <p className="text-orange-100 text-lg max-w-2xl mb-6">
+                  Access authentic previous year question papers for the most competitive nursing exam in India. Includes NORCET 7, NORCET 4, and NORCET 3 papers.
+                </p>
+                <div className="inline-flex items-center bg-white text-orange-600 font-bold py-2 px-6 rounded-sm uppercase text-sm tracking-wide">
+                  Solve Now <ExternalLink className="ml-2 h-4 w-4" />
+                </div>
+              </div>
+            </div>
+          </Link>
+        </div>
+
+        {/* Other Exams Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {availableExams.map((key) => (
             <Link key={key} to={`/pyq/${key}`} className="block p-6 bg-white border border-gray-200 hover:border-primary transition-colors rounded-sm shadow-sm group">
@@ -148,7 +185,7 @@ const PYQDirectory: React.FC = () => {
                     <FileText className="h-6 w-6 text-gray-400 mr-4" />
                     <div>
                       <p className="text-sm font-medium text-primary truncate uppercase">
-                        {examId.replace(/-/g, ' ')} {paper.year}
+                        {examId?.replace(/-/g, ' ')} {paper.year}
                       </p>
                       <p className="text-xs text-gray-500 uppercase">
                         {paper.shift} • {paper.type}

@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import PYQDirectory from './pages/PYQDirectory';
 import Courses from './pages/Courses';
 import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import SubjectTests from './pages/SubjectTests';
 import MockTests from './pages/MockTests';
 
@@ -21,7 +22,7 @@ function App() {
           <Route path="exams" element={<div className="p-8 text-center">Exam Calendar Coming Soon</div>} />
           <Route path="nursing-courses" element={<Courses />} />
           <Route path="blog" element={<Blog />} />
-          <Route path="blog/:slug" element={<div className="p-8 text-center">Blog Post Content Coming Soon</div>} />
+          <Route path="blog/:slug" element={<BlogPost />} />
           <Route path="*" element={<div className="p-8 text-center">404 - Page Not Found</div>} />
         </Route>
       </Routes>

@@ -31,6 +31,9 @@ const Footer: React.FC = () => {
           <p className="text-xs text-gray-500 mb-2">
             <strong>Disclaimer:</strong> This website is an educational help portal for nursing aspirants and is NOT an official website of AIIMS, RRB, or any other government body.
           </p>
+          <p className="text-xs text-gray-500 mb-2">
+            In association with <a href="https://nprep.in" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-primary transition-colors">NPrep</a>
+          </p>
           <p className="text-xs text-gray-500">
             &copy; {new Date().getFullYear()} norcetpreviousyearpapers.com. All rights reserved.
           </p>

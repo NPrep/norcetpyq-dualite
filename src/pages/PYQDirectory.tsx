@@ -1,217 +1,112 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { FileText, ExternalLink, AlertCircle, Star } from 'lucide-react';
+import { FileText, ExternalLink, AlertCircle, Download, ArrowRight } from 'lucide-react';
 
 const PYQDirectory: React.FC = () => {
   const { examId } = useParams<{ examId: string }>();
 
-  const pyqData: Record<string, any> = {
-    'aiims-norcet': {
-      title: 'AIIMS NORCET PREVIOUS YEAR PAPERS',
-      description: 'Authentic memory-based and official previous year question papers for AIIMS Nursing Officer Recruitment Common Eligibility Test (NORCET).',
-      papers: [
-        { year: '2024', shift: 'NORCET 7 PRELIMS (SEP)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/aXOX5oZXPZb' },
-        { year: '2023', shift: 'NORCET 4 (JUNE)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/weaumiphIZb' },
-        { year: '2022', shift: 'NORCET 3 (SHIFT 1)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/f2X7pvwHMZb' },
-        { year: '2022', shift: 'NORCET 3 (SHIFT 2)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/K7VH496yQZb' },
-        { year: 'MIXED', shift: '20 NOV (SHIFT 2)', type: 'PREVIOUS YEAR', link: 'https://links.nprep.in/xkOMXfpAhZb' },
-      ]
-    },
-    'rrb-staff-nurse': {
-      title: 'RRB STAFF NURSE PREVIOUS YEAR PAPERS',
-      description: 'Collection of Railway Recruitment Board Staff Nurse exam papers from previous recruitment cycles.',
-      papers: [
-        { year: '2019', shift: '20 JULY - SHIFT I', type: 'OFFICIAL', link: 'https://links.nprep.in/Wm36lpRx0Zb' },
-        { year: '2019', shift: '21 JULY - SHIFT I', type: 'OFFICIAL', link: 'https://links.nprep.in/9PwNw5DuPZb' },
-        { year: '2019', shift: '29 APRIL - SHIFT 3', type: 'NURSING SUPERINTENDENT', link: 'https://links.nprep.in/8LR9YaHPEZb' },
-        { year: 'MIXED', shift: 'PREVIOUS YEAR', type: 'NURSING OFFICER', link: 'https://links.nprep.in/iYJK63NtHZb' },
-        { year: '2021', shift: 'PREVIOUS YEAR', type: 'NURSING OFFICER', link: 'https://links.nprep.in/QNGYhi8GfZb' },
-      ]
-    },
-    'esic-staff-nurse': {
-      title: 'ESIC STAFF NURSE PREVIOUS YEAR PAPERS',
-      description: 'Previous year question papers for Employees State Insurance Corporation (ESIC) Nursing Officer exams.',
-      papers: [
-        { year: '2024', shift: '07 JULY', type: 'UPSC ESIC NO', link: 'https://links.nprep.in/PKB7mMivuZb' },
-        { year: '2019', shift: 'SHIFT I', type: 'OFFICIAL PAPER', link: 'https://links.nprep.in/wpMKcyDzQZb' },
-        { year: '2019', shift: 'SHIFT 2', type: 'OFFICIAL PAPER', link: 'https://links.nprep.in/Bk1Ehoy14Zb' },
-        { year: '2016', shift: 'SHIFT 1', type: 'OFFICIAL PAPER', link: 'https://links.nprep.in/8IQ1zxGs8Zb' },
-        { year: 'UNKNOWN', shift: '19 MAR, SHIFT 2', type: 'OFFICIAL PAPER', link: 'https://links.nprep.in/wjFgvVwa7Zb' },
-      ]
-    },
-    'dsssb-staff-nurse': {
-      title: 'DSSSB STAFF NURSE PREVIOUS YEAR PAPERS',
-      description: 'Delhi Subordinate Services Selection Board (DSSSB) Nursing Officer previous year papers.',
-      papers: [
-        { year: '2019', shift: '28 AUG - SHIFT I', type: 'OFFICIAL', link: 'https://links.nprep.in/PYdwRLVs8Zb' },
-        { year: '2019', shift: '28 AUG - SHIFT II', type: 'OFFICIAL', link: 'https://links.nprep.in/FZqrzFWs8Zb' },
-        { year: '2019', shift: '29 AUG - SHIFT I', type: 'OFFICIAL', link: 'https://links.nprep.in/e6PFDXYs8Zb' },
-        { year: '2019', shift: '29 AUG - SHIFT II', type: 'OFFICIAL', link: 'https://links.nprep.in/Na51lFXs8Zb' },
-        { year: '2015', shift: 'SOLVED PAPER', type: 'PUBLIC HEALTH NURSE', link: 'https://links.nprep.in/Q7Cp7d4n8Zb' },
-      ]
-    },
-    'btsc-staff-nurse': {
-      title: 'BTSC STAFF NURSE PREVIOUS YEAR PAPERS',
-      description: 'Bihar Technical Service Commission (BTSC) Staff Nurse recruitment exam papers.',
-      papers: [
-        { year: '2025', shift: 'PAPER 2025', type: 'OFFICIAL', link: 'https://links.nprep.in/ZpyBui10qZb' },
-        { year: 'MIXED', shift: 'PAPER 1', type: 'STAFF NURSE', link: 'https://links.nprep.in/fCgXW8DSWZb' },
-        { year: 'MIXED', shift: 'PAPER 2', type: 'STAFF NURSE', link: 'https://links.nprep.in/oCMagiQs8Zb' },
-        { year: 'MIXED', shift: 'PAPER 3', type: 'STAFF NURSE', link: 'https://links.nprep.in/M23vprRs8Zb' },
-      ]
-    },
-    'sgpgi-nursing-officer': {
-      title: 'SGPGI NURSING OFFICER PYQ',
-      description: 'Sanjay Gandhi Postgraduate Institute of Medical Sciences (SGPGI) Lucknow Nursing Officer papers.',
-      papers: [
-        { year: '2022', shift: 'PREVIOUS YEAR', type: 'NURSING OFFICER', link: 'https://links.nprep.in/Vy4XCouzQZb' },
-      ]
-    },
-    'gmch-chandigarh': {
-      title: 'GMCH CHANDIGARH PYQ',
-      description: 'Government Medical College & Hospital (GMCH) Chandigarh Staff Nurse previous papers.',
-      papers: [
-        { year: 'MIXED', shift: 'PREVIOUS YEAR', type: 'STAFF NURSE', link: 'https://links.nprep.in/Jol2zqwzQZb' },
-      ]
-    },
-    'pgimer-chandigarh': {
-      title: 'PGIMER CHANDIGARH PYQ',
-      description: 'Postgraduate Institute of Medical Education and Research (PGIMER) Chandigarh exam papers.',
-      papers: [
-        { year: '2015', shift: 'PREVIOUS YEAR', type: 'STAFF NURSE', link: 'https://links.nprep.in/w3MkLFIJZZb' },
-      ]
-    },
-    'pgims-rohtak': {
-      title: 'PGIMS ROHTAK PYQ',
-      description: 'Pt. B.D. Sharma PGIMS Rohtak Staff Nurse previous year question papers.',
-      papers: [
-        { year: '2017', shift: 'PREVIOUS YEAR', type: 'STAFF NURSE', link: 'https://links.nprep.in/EWf3btIKZZb' },
-      ]
-    },
-    // Default fallback
-    'default': {
-      title: 'NURSING EXAM PREVIOUS YEAR QUESTIONS',
-      description: 'Select a specific exam to view available previous year question papers.',
-      papers: []
-    }
+  // Only keeping NORCET data active
+  const norcetData = {
+    title: 'AIIMS NORCET PREVIOUS YEAR PAPERS',
+    description: 'Authentic memory-based and official previous year question papers for AIIMS Nursing Officer Recruitment Common Eligibility Test (NORCET).',
+    papers: [
+      { year: '2024', shift: 'NORCET 7 PRELIMS (SEP)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/aXOX5oZXPZb' },
+      { year: '2023', shift: 'NORCET 4 (JUNE)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/weaumiphIZb' },
+      { year: '2022', shift: 'NORCET 3 (SHIFT 1)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/f2X7pvwHMZb' },
+      { year: '2022', shift: 'NORCET 3 (SHIFT 2)', type: 'OFFICIAL/MEMORY', link: 'https://links.nprep.in/K7VH496yQZb' },
+      { year: 'MIXED', shift: '20 NOV (SHIFT 2)', type: 'PREVIOUS YEAR', link: 'https://links.nprep.in/xkOMXfpAhZb' },
+    ]
   };
 
-  const currentExam = pyqData[examId || ''] || pyqData['default'];
+  // Check if user is trying to access non-NORCET content
+  const isNonNorcet = examId && examId !== 'aiims-norcet';
 
-  // List of keys to display in the main directory (excluding NORCET which is highlighted separately)
-  const availableExams = [
-    'rrb-staff-nurse',
-    'esic-staff-nurse',
-    'dsssb-staff-nurse',
-    'btsc-staff-nurse',
-    'sgpgi-nursing-officer',
-    'gmch-chandigarh',
-    'pgimer-chandigarh',
-    'pgims-rohtak'
-  ];
-
-  if (!examId || !pyqData[examId]) {
+  if (isNonNorcet) {
     return (
-      <div className="py-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-6 uppercase">ALL NURSING EXAM PYQS</h1>
-        
-        {/* Highlighted NORCET Section */}
-        <div className="mb-10 transform hover:scale-[1.01] transition-transform duration-200">
-          <Link to="/pyq/aiims-norcet" className="block">
-            <div className="bg-gradient-to-r from-orange-500 to-orange-600 rounded-sm shadow-lg p-8 text-white relative overflow-hidden group">
-              <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                <FileText size={120} />
-              </div>
-              <div className="relative z-10">
-                <div className="flex items-center gap-2 mb-2">
-                  <Star className="fill-yellow-300 text-yellow-300 h-5 w-5" />
-                  <span className="text-sm font-bold tracking-wider uppercase text-yellow-100">Most Popular</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase tracking-tight">AIIMS NORCET PYQ</h2>
-                <p className="text-orange-100 text-lg max-w-2xl mb-6">
-                  Access authentic previous year question papers for the most competitive nursing exam in India. Includes NORCET 7, NORCET 4, and NORCET 3 papers.
-                </p>
-                <div className="inline-flex items-center bg-white text-orange-600 font-bold py-2 px-6 rounded-sm uppercase text-sm tracking-wide">
-                  Solve Now <ExternalLink className="ml-2 h-4 w-4" />
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-
-        {/* Other Exams Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {availableExams.map((key) => (
-            <Link key={key} to={`/pyq/${key}`} className="block p-6 bg-white border border-gray-200 hover:border-primary transition-colors rounded-sm shadow-sm group">
-              <h2 className="text-xl font-bold text-gray-800 group-hover:text-primary mb-2 uppercase">
-                {key.replace(/-/g, ' ')}
-              </h2>
-              <p className="text-gray-600 text-sm">Access year-wise question papers and solutions.</p>
-            </Link>
-          ))}
+      <div className="py-16 text-center max-w-2xl mx-auto">
+        <div className="bg-orange-50 p-8 rounded-lg border border-orange-100">
+          <AlertCircle className="h-16 w-16 text-primary mx-auto mb-4" />
+          <h1 className="text-2xl font-bold text-gray-900 mb-2">Content Moved</h1>
+          <p className="text-gray-600 mb-6 text-lg">
+            We have specialized! This website is now exclusively for <strong>AIIMS NORCET</strong> content. 
+            The papers for <strong>{examId?.replace(/-/g, ' ').toUpperCase()}</strong> have been moved to our partner portal.
+          </p>
+          <a 
+            href="https://nursingpyq.com" 
+            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-sm text-white bg-primary hover:bg-orange-600 transition-colors"
+          >
+            Visit nursingpyq.com <ExternalLink className="ml-2 h-4 w-4" />
+          </a>
         </div>
       </div>
     );
   }
 
+  // Default View (NORCET)
   return (
     <div className="py-8">
-      <div className="mb-8">
-        <Link to="/pyq" className="text-sm text-gray-500 hover:text-primary mb-4 inline-block">&larr; BACK TO ALL EXAMS</Link>
-        <h1 className="text-3xl font-bold text-gray-900 mb-4 uppercase">{currentExam.title}</h1>
-        <p className="text-lg text-gray-700 leading-relaxed">{currentExam.description}</p>
+      <div className="mb-8 border-b border-gray-200 pb-8">
+        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 uppercase tracking-tight">
+          {norcetData.title}
+        </h1>
+        <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+          {norcetData.description}
+        </p>
       </div>
 
-      <div className="bg-amber-50 border-l-4 border-amber-500 p-4 mb-8">
+      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-sm">
         <div className="flex">
           <div className="flex-shrink-0">
-            <AlertCircle className="h-5 w-5 text-amber-500" aria-hidden="true" />
+            <AlertCircle className="h-5 w-5 text-blue-500" aria-hidden="true" />
           </div>
           <div className="ml-3">
-            <p className="text-sm text-amber-700">
-              Note: Some papers are memory-based reconstructions provided by students who appeared for the exam, as official papers are not always released.
+            <p className="text-sm text-blue-700">
+              <strong>Note:</strong> Most papers are memory-based reconstructions as AIIMS does not release official question papers. These are highly accurate for practice.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="bg-white shadow-sm border border-gray-200 rounded-sm overflow-hidden">
-        <ul className="divide-y divide-gray-200">
-          {currentExam.papers.length > 0 ? (
-            currentExam.papers.map((paper: any, index: number) => (
-              <li key={index} className="hover:bg-gray-50 transition-colors">
-                <div className="px-6 py-4 flex items-center justify-between">
-                  <div className="flex items-center">
-                    <FileText className="h-6 w-6 text-gray-400 mr-4" />
-                    <div>
-                      <p className="text-sm font-medium text-primary truncate uppercase">
-                        {examId?.replace(/-/g, ' ')} {paper.year}
-                      </p>
-                      <p className="text-xs text-gray-500 uppercase">
-                        {paper.shift} • {paper.type}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex items-center">
-                    <a 
-                      href={paper.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center px-3 py-1.5 border border-gray-300 shadow-sm text-xs font-medium rounded text-gray-700 bg-white hover:bg-gray-50 focus:outline-none uppercase"
-                    >
-                      <span className="mr-1">ATTEMPT TEST</span>
-                      <ExternalLink className="h-3 w-3 text-gray-500" />
-                    </a>
-                  </div>
+      {/* Improved UX: Card Layout instead of simple list */}
+      <div className="grid gap-6 md:grid-cols-1">
+        {norcetData.papers.map((paper, index) => (
+          <div key={index} className="bg-white border border-gray-200 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col md:flex-row md:items-center justify-between group">
+            <div className="flex items-start mb-4 md:mb-0">
+              <div className="p-3 bg-orange-100 rounded-full mr-4 group-hover:bg-orange-200 transition-colors">
+                <FileText className="h-6 w-6 text-primary" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  AIIMS NORCET {paper.year}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 uppercase">
+                    {paper.shift}
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 uppercase">
+                    {paper.type}
+                  </span>
                 </div>
-              </li>
-            ))
-          ) : (
-            <li className="px-6 py-8 text-center text-gray-500">
-              No papers currently available for this category. Check back soon.
-            </li>
-          )}
-        </ul>
+              </div>
+            </div>
+            
+            <a 
+              href={paper.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-5 py-2.5 border border-primary text-sm font-medium rounded-sm text-primary bg-white hover:bg-primary hover:text-white transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary min-w-[160px]"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Attempt / View
+            </a>
+          </div>
+        ))}
+      </div>
+      
+      <div className="mt-12 p-6 bg-gray-50 rounded-lg text-center">
+        <h3 className="text-lg font-bold text-gray-900 mb-2">Need Subject-Wise Practice?</h3>
+        <p className="text-gray-600 mb-4">Check out our subject-specific test series for focused revision.</p>
+        <Link to="/subjects" className="text-primary font-bold hover:underline">View Subject Tests &rarr;</Link>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import { BlogPost } from '../types/blog';
 export const blogPosts: Record<string, BlogPost> = {
   'norcet-previous-year-question-analysis': {
     slug: 'norcet-previous-year-question-analysis',
-    title: 'Detailed Analysis of NORCET Previous Year Questions (2020-2024)',
+    title: 'Detailed Analysis of NORCET Previous Year Questions',
     excerpt: 'We break down the last 4 years of NORCET papers to identify the most high-yield topics and shifting trends in question patterns.',
     date: 'October 15, 2025',
     author: 'Senior Nursing Faculty',
@@ -22,7 +22,7 @@ export const blogPosts: Record<string, BlogPost> = {
       { type: 'p', content: 'The Nursing Officer Recruitment Common Eligibility Test (NORCET) has evolved significantly since its inception. Initially, the exam focused heavily on theoretical knowledge and direct one-liners. However, recent trends from NORCET 4, 5, and 6 show a drastic shift towards clinical application and critical thinking. The examiner is no longer just testing your memory; they are testing your ability to make decisions in a hospital setting.' },
       { type: 'p', content: 'Understanding this evolution is crucial for any serious aspirant. If you are still relying on rote memorization of guidebooks from 2015, you are preparing for an exam that no longer exists. The modern NORCET paper requires a deep understanding of pathophysiology, priority nursing actions, and emergency management protocols.' },
       
-      { type: 'h2', content: 'Subject-Wise Weightage Analysis (2022-2024)', id: 'subject-weightage' },
+      { type: 'h2', content: 'Subject-Wise Weightage Analysis', id: 'subject-weightage' },
       { type: 'p', content: 'Based on our detailed analysis of memory-based papers and official releases, we have categorized the subject weightage. While AIIMS does not release an official blueprint, the pattern has remained consistent across the last three cycles.' },
       { type: 'p', content: 'Medical-Surgical Nursing (MSN) continues to be the king of subjects, but the surprise element has been the rise of Fundamentals of Nursing (FON) and Applied Anatomy. Neglecting these core areas is a common reason for failure.' },
       {
@@ -97,7 +97,7 @@ export const blogPosts: Record<string, BlogPost> = {
         ]
       },
 
-      { type: 'h2', content: 'High-Yield Topics Checklist for 2026', id: 'high-yield-checklist' },
+      { type: 'h2', content: 'High-Yield Topics Checklist', id: 'high-yield-checklist' },
       { type: 'p', content: 'Based on the last 5 exams, these topics are "Must-Know". You cannot afford to skip a single line from these areas.' },
       { type: 'p', content: 'Use this checklist to track your revision status. If you have not covered these, you are not ready for the exam.' },
       {
@@ -121,7 +121,7 @@ export const blogPosts: Record<string, BlogPost> = {
     ],
     faqs: [
       { question: 'Does AIIMS repeat questions from previous years?', answer: 'Direct repetition is rare (less than 5%), but topic repetition is very high (over 60%).' },
-      { question: 'Is NORCET 2026 going to be tougher?', answer: 'The trend suggests a shift towards more clinical and practical questions, making it conceptually tougher but fair for working nurses.' },
+      { question: 'Is NORCET going to be tougher?', answer: 'The trend suggests a shift towards more clinical and practical questions, making it conceptually tougher but fair for working nurses.' },
       { question: 'How many months of PYQs should I practice?', answer: 'Ideally, solve all papers from 2019 onwards. The pattern before 2019 is less relevant to the current scenario.' },
       { question: 'What is a safe score for AIIMS Delhi?', answer: 'For General category, aiming for 130+ correct marks (after negatives) is usually safe for top institutes.' },
       { question: 'Are image-based questions asked in Prelims?', answer: 'Yes, but they are fewer and simpler compared to the Mains examination.' },
@@ -146,7 +146,7 @@ export const blogPosts: Record<string, BlogPost> = {
   'importance-of-pyqs-in-nursing-exams': {
     slug: 'importance-of-pyqs-in-nursing-exams',
     title: 'Why PYQs are the Secret Weapon for Nursing Exams',
-    excerpt: 'Understanding why 40% of your preparation time should be dedicated to solving previous year papers for exams like RRB and ESIC.',
+    excerpt: 'Understanding why 40% of your preparation time should be dedicated to solving previous year papers.',
     date: 'September 28, 2025',
     author: 'Exam Strategy Expert',
     readTime: '12 min read',
@@ -267,7 +267,7 @@ export const blogPosts: Record<string, BlogPost> = {
 
   'rrb-staff-nurse-syllabus-breakdown': {
     slug: 'rrb-staff-nurse-syllabus-breakdown',
-    title: 'RRB Staff Nurse 2026: Detailed Syllabus & Strategy',
+    title: 'RRB Staff Nurse: Detailed Syllabus & Strategy',
     excerpt: 'A complete guide to cracking the Railway Staff Nurse exam, with a special focus on the non-technical section which is the game changer.',
     date: 'September 10, 2025',
     author: 'Railway Exam Specialist',
@@ -332,7 +332,7 @@ export const blogPosts: Record<string, BlogPost> = {
         }
       },
 
-      { type: 'h2', content: 'Step-by-Step Study Plan for RRB 2026', id: 'study-plan' },
+      { type: 'h2', content: 'Step-by-Step Study Plan', id: 'study-plan' },
       { type: 'p', content: 'A 3-month focused plan is sufficient if you have your basics clear.' },
       {
         type: 'steps',
@@ -663,7 +663,7 @@ export const blogPosts: Record<string, BlogPost> = {
   
   'top-books-nursing-officer-exams': {
     slug: 'top-books-nursing-officer-exams',
-    title: 'Top 5 Books for Nursing Officer Exams 2026',
+    title: 'Top 5 Books for Nursing Officer Exams',
     excerpt: 'The ultimate reading list for nursing aspirants, covering theory, MCQs, and practical clinical scenarios.',
     date: 'July 02, 2025',
     author: 'Book Reviewer',

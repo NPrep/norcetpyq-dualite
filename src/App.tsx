@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import PYQDirectory from './pages/PYQDirectory';
@@ -8,10 +8,15 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import SubjectTests from './pages/SubjectTests';
 import MockTests from './pages/MockTests';
+import { RouterWrapper } from './next/RouterWrapper';
 
-function App() {
+type AppProps = {
+  initialPath?: string;
+};
+
+function App({ initialPath = '/' }: AppProps) {
   return (
-    <Router>
+    <RouterWrapper initialPath={initialPath}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -26,7 +31,7 @@ function App() {
           <Route path="*" element={<div className="p-8 text-center">404 - Page Not Found</div>} />
         </Route>
       </Routes>
-    </Router>
+    </RouterWrapper>
   );
 }
 

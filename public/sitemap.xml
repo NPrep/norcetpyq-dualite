@@ -1,88 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Homepage -->
   <url>
     <loc>https://norcetpreviousyearpapers.com/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <lastmod>2026-02-15</lastmod>
     <priority>1.0</priority>
   </url>
-
-  <!-- NORCET Previous Year Papers Pages -->
   <url>
-    <loc>https://norcetpreviousyearpapers.com/norcet-papers-2025/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://norcetpreviousyearpapers.com/blog/</loc>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://norcetpreviousyearpapers.com/norcet-papers-2024/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://norcetpreviousyearpapers.com/norcet-papers-2023/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://norcetpreviousyearpapers.com/norcet-papers-2022/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <url>
-    <loc>https://norcetpreviousyearpapers.com/norcet-papers-2021/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Exam Syllabus / Guide Pages -->
-  <url>
-    <loc>https://norcetpreviousyearpapers.com/norcet-syllabus/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://norcetpreviousyearpapers.com/blog/daily-routine-nursing-aspirant/</loc>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://norcetpreviousyearpapers.com/norcet-exam-pattern/</loc>
-    <lastmod>2026-02-12</lastmod>
+    <loc>https://norcetpreviousyearpapers.com/blog/esic-vs-rrb-nursing-job/</loc>
+    <lastmod>2026-02-15</lastmod>
     <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://norcetpreviousyearpapers.com/norcet-application/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.5</priority>
+    <loc>https://norcetpreviousyearpapers.com/blog/how-to-crack-norcet-first-attempt/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.6</priority>
   </url>
-
-  <!-- FAQ Page -->
   <url>
-    <loc>https://norcetpreviousyearpapers.com/norcet-faq/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.5</priority>
+    <loc>https://norcetpreviousyearpapers.com/blog/importance-of-pyqs-in-nursing-exams/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.6</priority>
   </url>
-
-  <!-- Contact -->
   <url>
-    <loc>https://norcetpreviousyearpapers.com/contact/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.4</priority>
+    <loc>https://norcetpreviousyearpapers.com/blog/negative-marking-strategy/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.6</priority>
   </url>
-
-  <!-- Legal / Policy Pages -->
   <url>
-    <loc>https://norcetpreviousyearpapers.com/privacy-policy/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.3</priority>
+    <loc>https://norcetpreviousyearpapers.com/blog/norcet-previous-year-question-analysis/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.6</priority>
   </url>
-
   <url>
-    <loc>https://norcetpreviousyearpapers.com/terms-and-conditions/</loc>
-    <lastmod>2026-02-12</lastmod>
-    <priority>0.3</priority>
+    <loc>https://norcetpreviousyearpapers.com/blog/rrb-staff-nurse-syllabus-breakdown/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.6</priority>
   </url>
-
+  <url>
+    <loc>https://norcetpreviousyearpapers.com/blog/time-management-tips-nursing-exams/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://norcetpreviousyearpapers.com/blog/top-books-nursing-officer-exams/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://norcetpreviousyearpapers.com/exams/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norcetpreviousyearpapers.com/mock-tests/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norcetpreviousyearpapers.com/nursing-courses/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norcetpreviousyearpapers.com/pyq/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://norcetpreviousyearpapers.com/pyq/aiims-norcet/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://norcetpreviousyearpapers.com/subjects/</loc>
+    <lastmod>2026-02-15</lastmod>
+    <priority>0.8</priority>
+  </url>
 </urlset>

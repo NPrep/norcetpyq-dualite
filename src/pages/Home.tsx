@@ -206,6 +206,15 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      <section className="mb-12">
+        <div className="nprep-testimonial-cta">
+          <h2 className="text-3xl font-semibold text-[var(--text-primary)]">Hear from real students</h2>
+          <a className="cta" href="https://nprep.in/blogs?filter=NORCET+Success+Story" target="_blank" rel="noopener noreferrer">
+            Read verified success stories on NPrep
+          </a>
+        </div>
+      </section>
+
       {/* OTHER EXAMS NOTICE */}
       <section className="mb-12 bg-gray-50 p-6 rounded-sm text-center">
         <h3 className="text-lg font-bold text-gray-900 mb-2">Looking for RRB, ESIC, or DSSSB Papers?</h3>

@@ -20,7 +20,7 @@ const Header: React.FC = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         <div className="flex-shrink-0 flex items-center">
           <Link to="/" className="flex items-center gap-2 group">
-            <img src="/favicon.svg" alt="Logo" className="h-8 w-8" />
+            <img loading="lazy" src="/favicon.svg" alt="Logo" className="h-8 w-8" />
             <span className="text-xl font-bold text-primary tracking-tight group-hover:opacity-90 transition-opacity">
               NORCET<span className="text-black">PYQ</span>
             </span>

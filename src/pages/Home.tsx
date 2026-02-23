@@ -2,29 +2,106 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, CheckCircle, AlertTriangle, FileText } from 'lucide-react';
 
+const cycleFilters = [
+  { cycle: 'NORCET 4', month: 'June 2022', source: 'Memory' },
+  { cycle: 'NORCET 5', month: 'September 2023', source: 'Official' },
+  { cycle: 'NORCET 6', month: 'April 2024', source: 'Official' },
+  { cycle: 'NORCET 7', month: 'September 2024', source: 'Official' },
+  { cycle: 'NORCET 8', month: 'April 2025', source: 'Memory' },
+  { cycle: 'NORCET 9', month: 'September 2025', source: 'Memory' },
+];
+
+const pyqCards = [
+  {
+    cycle: 'NORCET 7',
+    date: 'September 2024',
+    type: 'Prelims',
+    questions: '100 Questions',
+    difficulty: 'Moderate',
+    completion: 68,
+    pdf: true,
+  },
+  {
+    cycle: 'NORCET 6',
+    date: 'April 2024',
+    type: 'Mains',
+    questions: '100 Questions',
+    difficulty: 'High',
+    completion: 45,
+    pdf: true,
+  },
+  {
+    cycle: 'NORCET 5',
+    date: 'September 2023',
+    type: 'Prelims',
+    questions: '100 Questions',
+    difficulty: 'Moderate',
+    completion: 81,
+    pdf: true,
+  },
+  {
+    cycle: 'NORCET 4',
+    date: 'June 2022',
+    type: 'Mains',
+    questions: '100 Questions',
+    difficulty: 'High',
+    completion: 32,
+    pdf: false,
+  },
+];
+
+const syllabusDistribution = [
+  { subject: 'Medical Surgical Nursing', percentage: 35, color: 'bg-blue-500' },
+  { subject: 'Fundamentals of Nursing', percentage: 25, color: 'bg-emerald-500' },
+  { subject: 'Obstetrics & Gynecology', percentage: 15, color: 'bg-violet-500' },
+  { subject: 'Psychiatric Nursing', percentage: 10, color: 'bg-amber-500' },
+];
+
 const Home: React.FC = () => {
   return (
     <article className="prose prose-slate max-w-none prose-headings:text-primary prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
-      
       {/* H1 */}
       <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8 border-b-2 border-primary pb-4">
         NORCET Previous Year Questions – AIIMS Nursing Officer Exams
       </h1>
 
       {/* HERO CTA BOX - NORCET FOCUSED */}
-      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-sm shadow-lg mb-12 flex flex-col md:flex-row items-center justify-between">
-        <div className="mb-6 md:mb-0 md:mr-6">
-          <h2 className="text-2xl font-bold text-white mb-2 mt-0">Master AIIMS NORCET</h2>
-          <p className="text-gray-300 text-lg mb-0">
-            Access the most comprehensive archive of authentic AIIMS NORCET previous year question papers (Prelims & Mains).
-          </p>
+      <div className="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-xl shadow-xl mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 mt-0">
+              NORCET Previous Year Questions — Authentic Papers from Every Cycle
+            </h2>
+            <p className="text-gray-300 text-lg mb-0">
+              Access the most comprehensive archive of authentic AIIMS NORCET previous year question papers (Prelims & Mains).
+            </p>
+          </div>
+          <Link
+            to="/pyq/aiims-norcet"
+            className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-gray-900 bg-primary hover:bg-white transition-colors duration-200 whitespace-nowrap"
+          >
+            Solve NORCET PYQs <ArrowRight className="ml-2 h-5 w-5" />
+          </Link>
         </div>
-        <Link 
-          to="/pyq/aiims-norcet" 
-          className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-sm text-gray-900 bg-primary hover:bg-white transition-colors duration-200 whitespace-nowrap"
-        >
-          Solve NORCET PYQs <ArrowRight className="ml-2 h-5 w-5" />
-        </Link>
+
+        <div className="mt-8 border border-white/20 rounded-xl p-4 bg-white/5">
+          <p className="text-sm md:text-base text-gray-200 font-semibold mb-3">Filter by year: NORCET 4 | 5 | 6 | 7 | 8 | 9</p>
+          <div className="flex flex-wrap gap-3">
+            {cycleFilters.map((filter) => (
+              <Link
+                key={filter.cycle}
+                to="/pyq/aiims-norcet"
+                className="px-4 py-2 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 transition-colors"
+              >
+                <span className="block text-sm font-semibold text-white leading-tight">{filter.cycle}</span>
+                <span className="block text-xs text-gray-300 leading-tight">{filter.month}</span>
+                <span className="inline-block text-[11px] font-medium text-gray-900 bg-primary/90 px-2 py-0.5 rounded-full mt-1">
+                  ({filter.source})
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* LATEST NORCET PAPERS SECTION */}
@@ -33,46 +110,59 @@ const Home: React.FC = () => {
           <FileText className="mr-2 h-6 w-6" />
           Latest NORCET PYQs
         </h2>
-        <div className="grid gap-4 md:grid-cols-2">
-          <Link to="/pyq/aiims-norcet" className="block p-4 bg-white border border-gray-200 rounded-sm hover:border-primary hover:shadow-md transition-all group">
-            <div className="flex justify-between items-center">
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary m-0">NORCET 7 Prelims</h3>
-                <p className="text-sm text-gray-500 m-0">September Cycle • Official/Memory</p>
+        <div className="grid gap-5 md:grid-cols-2">
+          {pyqCards.map((paper) => (
+            <article
+              key={paper.cycle}
+              className="bg-white border border-gray-200 rounded-xl p-5 hover:border-primary hover:shadow-lg transition-all"
+            >
+              <div className="flex gap-4">
+                <div className="min-w-20 h-20 rounded-lg bg-gradient-to-br from-primary/15 to-primary/40 flex items-center justify-center">
+                  <span className="text-2xl font-black text-primary">{paper.cycle.replace('NORCET ', 'N')}</span>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-gray-900 m-0">{paper.cycle}</h3>
+                  <p className="text-sm text-gray-500 m-0">{paper.date}</p>
+                  <div className="mt-2 flex flex-wrap gap-2">
+                    <span className="text-xs font-medium px-2 py-1 rounded-full bg-blue-50 text-blue-700">{paper.type}</span>
+                    <span className="text-xs font-medium px-2 py-1 rounded-full bg-gray-100 text-gray-700">{paper.questions}</span>
+                    <span className="text-xs font-medium px-2 py-1 rounded-full bg-orange-50 text-orange-700">{paper.difficulty}</span>
+                  </div>
+                </div>
               </div>
-              <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-primary" />
-            </div>
-          </Link>
-          <Link to="/pyq/aiims-norcet" className="block p-4 bg-white border border-gray-200 rounded-sm hover:border-primary hover:shadow-md transition-all group">
-            <div className="flex justify-between items-center">
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary m-0">NORCET 6 Mains</h3>
-                <p className="text-sm text-gray-500 m-0">April Cycle • Clinical Scenarios</p>
+
+              <div className="mt-4">
+                <div className="flex justify-between text-xs text-gray-600 mb-1">
+                  <span>NPrep completion</span>
+                  <span>{paper.completion}%</span>
+                </div>
+                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div className="h-full bg-primary rounded-full" style={{ width: `${paper.completion}%` }} />
+                </div>
               </div>
-              <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-primary" />
-            </div>
-          </Link>
-          <Link to="/pyq/aiims-norcet" className="block p-4 bg-white border border-gray-200 rounded-sm hover:border-primary hover:shadow-md transition-all group">
-            <div className="flex justify-between items-center">
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary m-0">NORCET 5</h3>
-                <p className="text-sm text-gray-500 m-0">September Cycle • Full Paper</p>
+
+              <div className="mt-4 flex flex-wrap gap-3">
+                <Link
+                  to="/pyq/aiims-norcet"
+                  className="inline-flex items-center px-4 py-2 rounded-lg bg-primary text-gray-900 font-semibold hover:bg-primary/90"
+                >
+                  Solve Online
+                </Link>
+                {paper.pdf ? (
+                  <Link
+                    to="/pyq/aiims-norcet"
+                    className="inline-flex items-center px-4 py-2 rounded-lg border border-gray-300 text-gray-700 font-medium hover:border-primary hover:text-primary"
+                  >
+                    Download PDF
+                  </Link>
+                ) : (
+                  <span className="inline-flex items-center px-4 py-2 rounded-lg border border-dashed border-gray-300 text-gray-400 font-medium">
+                    PDF Coming Soon
+                  </span>
+                )}
               </div>
-              <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-primary" />
-            </div>
-          </Link>
-          <Link to="/pyq/aiims-norcet" className="block p-4 bg-white border border-gray-200 rounded-sm hover:border-primary hover:shadow-md transition-all group">
-            <div className="flex justify-between items-center">
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-primary m-0">NORCET 4</h3>
-                <p className="text-sm text-gray-500 m-0">June Cycle • Memory Based</p>
-              </div>
-              <ArrowRight className="h-5 w-5 text-gray-400 group-hover:text-primary" />
-            </div>
-          </Link>
-        </div>
-        <div className="mt-4 text-right">
-          <Link to="/pyq/aiims-norcet" className="text-sm font-bold text-primary hover:underline">View All Papers &rarr;</Link>
+            </article>
+          ))}
         </div>
       </section>
 
@@ -88,13 +178,14 @@ const Home: React.FC = () => {
       </section>
 
       {/* SECTION: IMPORTANCE OF PYQs */}
-      <section className="mb-10 bg-orange-50 p-6 border-l-4 border-primary rounded-sm">
+      <section className="mb-10 bg-orange-50 p-6 border-l-4 border-primary rounded-xl">
         <h2 className="text-2xl font-semibold text-primary mb-4 mt-0">Why NORCET PYQs are Critical?</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div>
             <h3 className="text-lg font-bold text-gray-900 mb-2">1. Clinical Scenario Mastery</h3>
             <p className="text-gray-800">
-              NORCET asks "What is the priority nursing action?" rather than "What is the definition?". Solving <Link to="/blog/norcet-previous-year-question-analysis">analyzed PYQs</Link> trains your mind to think like an AIIMS examiner.
+              NORCET asks "What is the priority nursing action?" rather than "What is the definition?". Solving{' '}
+              <Link to="/blog/norcet-previous-year-question-analysis">analyzed PYQs</Link> trains your mind to think like an AIIMS examiner.
             </p>
           </div>
           <div>
@@ -112,41 +203,39 @@ const Home: React.FC = () => {
         <p className="text-gray-800 mb-4">
           Understanding the two-stage process (Prelims and Mains) is vital. The Prelims is a screening test, while the Mains determines your rank.
         </p>
-        <div className="overflow-x-auto">
-          <table className="min-w-full border border-gray-300 text-left text-sm">
-            <thead className="bg-primary text-white">
-              <tr>
-                <th className="px-4 py-3 font-semibold border-r border-gray-300">Stage</th>
-                <th className="px-4 py-3 font-semibold border-r border-gray-300">Duration</th>
-                <th className="px-4 py-3 font-semibold border-r border-gray-300">Questions</th>
-                <th className="px-4 py-3 font-semibold">Focus Area</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-gray-200">
-              <tr className="bg-white">
-                <td className="px-4 py-3 border-r border-gray-200 font-medium">Stage I: Prelims</td>
-                <td className="px-4 py-3 border-r border-gray-200">90 Mins</td>
-                <td className="px-4 py-3 border-r border-gray-200">100 MCQs</td>
-                <td className="px-4 py-3">Screening / Basic Knowledge</td>
-              </tr>
-              <tr className="bg-accent">
-                <td className="px-4 py-3 border-r border-gray-200 font-medium">Stage II: Mains</td>
-                <td className="px-4 py-3 border-r border-gray-200">90 Mins</td>
-                <td className="px-4 py-3 border-r border-gray-200">100 MCQs</td>
-                <td className="px-4 py-3">Clinical Scenarios / Rank Decider</td>
-              </tr>
-            </tbody>
-          </table>
+        <div className="grid md:grid-cols-[1fr_auto_1fr] gap-4 items-center">
+          <div className="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 className="text-lg font-bold text-primary mt-0">Stage I: Prelims</h3>
+            <ul className="m-0 p-0 list-none space-y-2 text-gray-700">
+              <li><strong>Duration:</strong> 90 Minutes</li>
+              <li><strong>Questions:</strong> 100 MCQs</li>
+              <li><strong>Focus:</strong> Screening + Basic Concepts</li>
+              <li><strong>Marking:</strong> 1/3rd Negative</li>
+            </ul>
+          </div>
+
+          <div className="text-center text-primary font-bold">
+            <ArrowRight className="mx-auto h-6 w-6" />
+            <p className="m-0 text-sm">Qualify → Advance</p>
+          </div>
+
+          <div className="bg-accent border border-gray-200 rounded-xl p-5">
+            <h3 className="text-lg font-bold text-primary mt-0">Stage II: Mains</h3>
+            <ul className="m-0 p-0 list-none space-y-2 text-gray-700">
+              <li><strong>Duration:</strong> 90 Minutes</li>
+              <li><strong>Questions:</strong> 100 MCQs</li>
+              <li><strong>Focus:</strong> Clinical Scenarios + Rank Decider</li>
+              <li><strong>Marking:</strong> 1/3rd Negative</li>
+            </ul>
+          </div>
         </div>
-        <p className="text-sm text-gray-600 mt-2">
-          * Both stages carry 1/3rd negative marking. Qualifying marks are typically 50% for UR/EWS.
-        </p>
+        <p className="text-sm text-gray-600 mt-3">* Qualifying marks are typically 50% for UR/EWS.</p>
       </section>
 
       {/* SECTION 4: Eligibility */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-primary mb-4">NORCET Eligibility Criteria</h2>
-        <div className="bg-white border border-gray-200 p-6 rounded-sm">
+        <div className="bg-white border border-gray-200 p-6 rounded-xl">
           <ul className="space-y-4">
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-1 flex-shrink-0" />
@@ -176,29 +265,36 @@ const Home: React.FC = () => {
       {/* SECTION 5: Syllabus Focus */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold text-primary mb-4">NORCET Syllabus Breakdown</h2>
-        <p className="text-gray-800 leading-relaxed text-lg">
-          The syllabus covers the entire B.Sc Nursing curriculum, but the weightage is skewed. 
-        </p>
-        <div className="grid md:grid-cols-2 gap-6 mt-6">
-          <div className="bg-white p-5 border border-gray-200 rounded-sm">
-            <h3 className="font-bold text-gray-900 mb-2 text-lg">High Yield Subjects</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-1">
-              <li>Medical Surgical Nursing (30-35%)</li>
-              <li>Fundamentals of Nursing (20-25%)</li>
-              <li>Obstetrics & Gynecology (10-15%)</li>
-              <li>Psychiatric Nursing (5-10%)</li>
-            </ul>
+        <p className="text-gray-800 leading-relaxed text-lg">The syllabus covers the entire B.Sc Nursing curriculum, but the weightage is skewed.</p>
+
+        <div className="bg-white p-5 border border-gray-200 rounded-xl mt-6">
+          <h3 className="font-bold text-gray-900 mb-4 text-lg mt-0">High Yield Subjects</h3>
+          <div className="space-y-4">
+            {syllabusDistribution.map((item) => (
+              <div key={item.subject}>
+                <div className="flex justify-between text-sm font-medium text-gray-700 mb-1">
+                  <span>{item.subject}</span>
+                  <span>{item.percentage}%</span>
+                </div>
+                <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
+                  <div className={`h-full ${item.color} rounded-full`} style={{ width: `${item.percentage}%` }} />
+                </div>
+              </div>
+            ))}
           </div>
-          <div className="bg-white p-5 border border-gray-200 rounded-sm">
-            <h3 className="font-bold text-gray-900 mb-2 text-lg">Non-Nursing Section</h3>
-            <ul className="list-disc list-inside text-gray-700 space-y-1">
-              <li>General Knowledge & Current Affairs</li>
-              <li>Aptitude & Reasoning</li>
-              <li>Basic Computers</li>
-              <li className="text-sm text-gray-500 mt-2 italic">*Total 20 Questions</li>
-            </ul>
-          </div>
+          <p className="text-xs text-gray-500 mt-4 mb-0 italic">Source: Based on analysis of NORCET 5-9 papers.</p>
         </div>
+
+        <div className="mt-6 bg-white p-5 border border-gray-200 rounded-xl">
+          <h3 className="font-bold text-gray-900 mb-2 text-lg mt-0">Non-Nursing Section</h3>
+          <ul className="list-disc list-inside text-gray-700 space-y-1">
+            <li>General Knowledge & Current Affairs</li>
+            <li>Aptitude & Reasoning</li>
+            <li>Basic Computers</li>
+            <li className="text-sm text-gray-500 mt-2 italic">*Total 20 Questions</li>
+          </ul>
+        </div>
+
         <div className="mt-6">
           <Link to="/blog/norcet-previous-year-question-analysis" className="text-primary font-bold hover:underline">
             Read Detailed Syllabus Analysis &rarr;
@@ -216,21 +312,34 @@ const Home: React.FC = () => {
       </section>
 
       {/* OTHER EXAMS NOTICE */}
-      <section className="mb-12 bg-gray-50 p-6 rounded-sm text-center">
-        <h3 className="text-lg font-bold text-gray-900 mb-2">Looking for RRB, ESIC, or DSSSB Papers?</h3>
-        <p className="text-gray-600 mb-4">
-          This portal is exclusively dedicated to AIIMS NORCET. For other nursing exams, please visit our partner site.
-        </p>
-        <a 
-          href="https://nursingpyq.com" 
-          target="_blank" 
+      <section className="mb-12 bg-gray-50 p-6 rounded-xl text-center border border-gray-200">
+        <h3 className="text-lg font-bold text-gray-900 mb-2 mt-0">Looking for RRB, ESIC, or DSSSB PYQs?</h3>
+        <p className="text-gray-600 mb-4">This portal is exclusively dedicated to AIIMS NORCET.</p>
+        <a
+          href="https://nursingpyq.com"
+          target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center text-primary font-bold hover:underline"
         >
-          Visit nursingpyq.com <ExternalLinkIcon />
+          Looking for RRB, ESIC, or DSSSB PYQs? → Visit our sister site NursingPYQ.com (also by NPrep) <ExternalLinkIcon />
         </a>
       </section>
 
+      <section className="mb-10 bg-amber-50 p-5 border-l-4 border-amber-400 rounded-xl">
+        <h3 className="text-lg font-bold text-gray-900 mt-0 mb-2 flex items-center">
+          <AlertTriangle className="mr-2 h-5 w-5 text-amber-500" /> Preparation Tip
+        </h3>
+        <p className="text-gray-700 mb-0">
+          Prioritize PYQs from the latest two cycles and solve them in timed mode first. Then revise older cycles using topic-wise tags to maximize retention.
+        </p>
+      </section>
+
+      <section className="mb-8">
+        <h3 className="text-xl font-semibold text-primary flex items-center mb-3 mt-0">
+          <BookOpen className="mr-2 h-5 w-5" /> Start with the smartest sequence
+        </h3>
+        <p className="text-gray-700 mb-0">NORCET 7 → NORCET 6 → NORCET 5 → NORCET 4 gives you the best blend of latest pattern + foundational coverage.</p>
+      </section>
     </article>
   );
 };

@@ -1,42 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-accent border-t border-gray-200 mt-12 py-12">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="mt-12 border-t border-gray-200 bg-accent py-12">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           <div>
-            <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">About</h3>
-            <p className="text-sm text-gray-600 leading-relaxed mb-4">
-              norcetpreviousyearpapers.com is a dedicated archive for nursing competitive exam previous year questions. We provide authentic PYQs for AIIMS NORCET, RRB, DSSSB, and State Nursing exams to help aspirants prepare effectively.
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-gray-900">About</h3>
+            <p className="text-sm leading-relaxed text-gray-600">
+              norcetpreviousyearpapers.com is a dedicated PYQ library for AIIMS NORCET previous year question papers and basic answer keys.
             </p>
-            <div className="flex items-center text-sm text-gray-600">
-              <Phone className="h-4 w-4 mr-2" />
-              <a href="tel:+916377639169" className="hover:underline">+91 6377 6391 69</a>
-            </div>
           </div>
           <div>
-            <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Quick Links</h3>
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-gray-900">PYQ Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/pyq" className="text-sm text-gray-600 hover:text-primary">All PYQs</Link></li>
-              <li><Link to="/subjects" className="text-sm text-gray-600 hover:text-primary">Subject Wise Tests</Link></li>
-              <li><Link to="/mock-tests" className="text-sm text-gray-600 hover:text-primary">Mock Tests</Link></li>
-              <li><Link to="/nursing-courses" className="text-sm text-gray-600 hover:text-primary">Structured Courses</Link></li>
+              <li><Link to="/norcet-previous-year-question-papers" className="text-sm text-gray-600 hover:text-primary">NORCET Previous Year Question Papers</Link></li>
+              <li><Link to="/norcet-pyq-pdf-download" className="text-sm text-gray-600 hover:text-primary">PYQ PDF Download</Link></li>
+              <li><Link to="/norcet-pyq-with-answers" className="text-sm text-gray-600 hover:text-primary">PYQ with Answers</Link></li>
             </ul>
           </div>
+          <div>
+            <h3 className="mb-4 text-sm font-bold uppercase tracking-wider text-gray-900">Practice</h3>
+            <p className="text-sm text-gray-600">Attempt topic-wise PYQs and detailed solutions on NPrep.</p>
+            <a href="https://nprep.in" target="_blank" rel="noopener noreferrer" className="mt-3 inline-flex text-sm font-bold text-primary hover:underline">
+              Start Practice on NPrep
+            </a>
+          </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-gray-300 text-center">
-          <p className="nprep-disclaimer-banner text-xs text-gray-500 mb-2">
-            <strong>Disclaimer:</strong> This website is an educational help portal for nursing aspirants and is NOT an official website of AIIMS, RRB, or any other government body.
+        <div className="mt-8 border-t border-gray-300 pt-8 text-center">
+          <p className="mb-2 text-xs text-gray-500">
+            <strong>Disclaimer:</strong> This is not an official AIIMS website.
           </p>
-          <p className="text-xs text-gray-500 mb-2">
-            In association with <a href="https://nprep.in" target="_blank" rel="noopener noreferrer" className="font-bold hover:text-primary transition-colors">NPrep</a>
-          </p>
-          <p className="text-xs text-gray-500">
-            &copy; {new Date().getFullYear()} norcetpreviousyearpapers.com. All rights reserved.
-          </p>
+          <p className="text-xs text-gray-500">&copy; {new Date().getFullYear()} norcetpreviousyearpapers.com. All rights reserved.</p>
         </div>
       </div>
     </footer>

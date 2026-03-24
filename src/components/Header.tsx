@@ -8,33 +8,34 @@ const Header: React.FC = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'PYQ Master', path: '/norcet-previous-year-question-papers' },
-    { name: '2024', path: '/norcet-2024-question-paper' },
-    { name: '2023', path: '/norcet-2023-question-paper' },
-    { name: 'PDF Download', path: '/norcet-pyq-pdf-download' },
-    { name: 'With Answers', path: '/norcet-pyq-with-answers' },
+    { name: 'PYQs', path: '/pyq' },
+    { name: 'Subjects', path: '/subjects' },
+    { name: 'Mock Tests', path: '/mock-tests' },
+    { name: 'Courses', path: '/nursing-courses' },
+    { name: 'Blog', path: '/blog' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 bg-white">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-shrink-0 items-center">
-          <Link to="/" className="group flex items-center gap-2">
+    <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <div className="flex-shrink-0 flex items-center">
+          <Link to="/" className="flex items-center gap-2 group">
             <img loading="lazy" src="/favicon.svg" alt="Logo" className="h-8 w-8" />
-            <span className="text-xl font-bold tracking-tight text-primary transition-opacity group-hover:opacity-90">
+            <span className="text-xl font-bold text-primary tracking-tight group-hover:opacity-90 transition-opacity">
               NORCET<span className="text-black">PYQ</span>
             </span>
           </Link>
         </div>
-
-        <nav className="hidden space-x-6 md:flex">
+        
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex space-x-6">
           {navItems.map((item) => (
             <Link
               key={item.name}
               to={item.path}
               className={`text-sm font-medium transition-colors duration-200 ${
                 location.pathname === item.path
-                  ? 'border-b-2 border-primary text-primary'
+                  ? 'text-primary border-b-2 border-primary'
                   : 'text-gray-600 hover:text-primary'
               }`}
             >
@@ -43,6 +44,7 @@ const Header: React.FC = () => {
           ))}
         </nav>
 
+        {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -53,17 +55,18 @@ const Header: React.FC = () => {
         </div>
       </div>
 
+      {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="nprep-mobile-drawer md:hidden">
-          <div className="space-y-1 px-2 pt-2 pb-3 sm:px-3">
+        <div className="md:hidden nprep-mobile-drawer">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <Link
                 key={item.name}
                 to={item.path}
-                className={`block rounded-md px-3 py-2 text-base font-medium ${
+                className={`block px-3 py-2 rounded-md text-base font-medium ${
                   location.pathname === item.path
-                    ? 'bg-orange-50 text-primary'
-                    : 'text-gray-700 hover:bg-gray-50 hover:text-primary'
+                    ? 'text-primary bg-orange-50'
+                    : 'text-gray-700 hover:text-primary hover:bg-gray-50'
                 }`}
                 onClick={() => setIsMenuOpen(false)}
               >

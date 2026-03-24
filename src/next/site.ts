@@ -1,8 +1,8 @@
 export const site = {
-  name: 'AIIMS NORCET Previous Year Question Papers',
-  domain: 'norcetpreviousyearpapers.com',
-  url: 'https://norcetpreviousyearpapers.com',
-  description: 'PYQ library for AIIMS NORCET previous year question papers, PDF downloads, and basic answer keys.',
-  email: 'administration@nprep.in',
-  logoPath: '/favicon.svg'
+  name: "NORCET Previous Year Papers",
+  domain: "norcetpreviousyearpapers.com",
+  url: "https://norcetpreviousyearpapers.com",
+  description: "NORCET previous year papers, PYQs, and exam resources for nursing officer aspirants.",
+  email: "administration@nprep.in",
+  logoPath: "/favicon.svg"
 };

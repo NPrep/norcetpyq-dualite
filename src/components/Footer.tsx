@@ -12,9 +12,14 @@ const Footer: React.FC = () => {
             <p className="text-sm text-gray-600 leading-relaxed mb-4">
               norcetpreviousyearpapers.com is a dedicated archive for nursing competitive exam previous year questions. We provide authentic PYQs for AIIMS NORCET, RRB, DSSSB, and State Nursing exams to help aspirants prepare effectively.
             </p>
-            <div className="flex items-center text-sm text-gray-600">
-              <Phone className="h-4 w-4 mr-2" />
-              <a href="tel:+916377639169" className="hover:underline">+91 6377 6391 69</a>
+            <div>
+              <a
+                href="tel:+916377639169"
+                className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-primary/15 transition-colors hover:text-primary hover:ring-primary/40"
+              >
+                <Phone className="h-4 w-4 text-primary" />
+                <span>+91 6377 6391 69</span>
+              </a>
             </div>
           </div>
           <div>
